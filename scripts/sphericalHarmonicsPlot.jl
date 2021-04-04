@@ -41,7 +41,7 @@ cmap = (:dodgerblue, :white) # how to include this into menu options?
 
 fig = Figure(resolution = (900, 500), backgroundcolor = :black)
 
-menu = Menu(fig, options = ["viridis", "heat", "plasma", "magma"])
+menu = Menu(fig, options = ["viridis", "heat", "plasma", "magma", "inferno"])
 
 Ygrid = lift(l, m) do l, m
     [Y(θ, ϕ, l, m) for θ in θ, ϕ in ϕ]
@@ -72,7 +72,7 @@ on(menu.selection) do s
     pltobj2.colormap = s
 end
 
-sl = Slider(fig[end+1, 2:3], range = 1:10, startvalue = 4)
+sl = Slider(fig[end+1, 2:3], range = 1:30, startvalue = 3)
 sl2 = Slider(fig[end+1, 2:3], range = @lift(-$(sl.value):1:$(sl.value)))
 connect!(l, sl.value)
 connect!(m, sl2.value)
