@@ -1,6 +1,6 @@
 using StatsBase, KernelDensity, Colors, LinearAlgebra
 using Random
-using CairoMakie, ColorSchemes
+using CairoMakie, ColorSchemes # using GLMakie
 set_theme!(
     rowgap = 5,
     colgap = 5, 
